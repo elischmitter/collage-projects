@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+   backgroundcolor=\color{backcolour},
+   commentstyle=\color{codegreen},
+   keywordstyle=\color{magenta},
+   numberstyle=\tiny\color{codegray},
+   stringstyle=\color{codepurple},
+   basicstyle=\footnotesize,
+   breakatwhitespace=false,
+   breaklines=true,
+   captionpos=b,
+   keepspaces=true,
+   numbers=left,
+   numbersep=5pt,
+   showspaces=false,
+   showstringspaces=false,
+   showtabs=false,
+   tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+
+\begin{flushleft}
+  Eli Schmitter
+\end{flushleft}
+\section{R7.1}
+If you try to open an file for reading that doesn't exist a FileNotFoundException will be thrown. If you try to open an file for writing that doesn't exist a new file length of 0 will be made.
+\section{R7.2}
+If you try to open read only file an exception will be thrown.
+\section{R7.7}
+A checked exception is an exception that is checked for at compile time. An example of this would be an IOException.
+ An unchecked exception is an exception that is not checked at compile time. An example of this would be ArithmeticException.
+\section{R7.10}
+If there is no matching catch clause at a higher level, then the program will end showing stack trace of the exception. If its at a lower level it pushes there error up a stack frame
+\section{R7.12}
+The exception object is always the same as the type declared in the catch clause.
+\section{E7.4}
+\begin{lstlisting}[language=Java]
+import java.io.*;
+import java.util.Scanner;
+import java.util.*;
+public class lineNums {
+    public static void main(String args[]) {
+        Scanner userIn = new Scanner(System.in);
+        System.out.print("Enter input file name\n>");
+        String path = userIn.nextLine();
+        try {
+            File fileIn = new File(path);
+            Scanner scnr = new Scanner(fileIn);
+            System.out.print("Enter output file name\n>");
+            String fileOut = userIn.nextLine();
+            File fileOutPath = new File(fileOut);
+            userIn.close();
+            PrintWriter out = new PrintWriter(fileOutPath);
+            int lineNumber = 1;
+            while (scnr.hasNextLine()) {
+                String line = scnr.nextLine();
+                out.println("\\* " + lineNumber + " *\\ " + line);
+                lineNumber++;
+
+            }
+            out.close();
+            scnr.close();
+        } catch (FileNotFoundException e) {
+            System.out.print("File not found");
+        }
+
+    }
+
+}
+\end{lstlisting}
+\end{document}

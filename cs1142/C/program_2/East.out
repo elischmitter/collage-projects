@@ -1,0 +1,74 @@
+#include <limits.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int
+main (int argc, char *argv[])
+{
+  int maxX = 0;
+  int maxY = 0;
+  double avg = 0;
+  int min = INT_MAX;
+  int max = INT_MIN;
+  int sum = 0;
+  if (scanf ("%d %d", &maxX, &maxY) == 0)
+    return 1;
+  int numPoits = maxX * maxY;
+  int graph[maxX][maxY];
+  for (int y = 0; y < maxY; y++)
+    {
+      for (int x = 0; x < maxX; x++)
+	{
+	  scanf ("%d ", &graph[x][y]);
+	  if (graph[x][y] > max)
+	    max = graph[x][y];
+	  if (graph[x][y] < min)
+	    min = graph[x][y];
+	  sum = sum + graph[x][y];
+	}
+    }
+  avg = sum / ((double) numPoits);
+  printf
+    ("Data points: %d\nAvg elevation: %.2f\nMin elevation: %d\nMax elevation: %d\n",
+     numPoits, avg, min, max);
+  /*   int i,j;
+     for(i = 0; i<maxY; i++)
+     {
+     printf("\n");
+     for(j = 0; j<maxX; j++)
+     {
+     printf("%d\t", graph[j][i]);
+     }
+     }
+     printf("\n"); */
+  int path[maxX][maxY];
+  for (int row = 0; row < maxY; row++)
+    {
+      path[0][row] = row;
+      if (atoi (argv[1]) != 0)
+	printf ("(0,%d) %d", row, graph[0][row]);
+      for (int coll = 1; coll < maxX; coll++)
+	{
+	  path[coll] = path[coll - 1][row];
+	  for (int y = path[coll - 1][row] - 1;
+	       y < path[coll - 1][row] + 2 && y < maxY; y++)
+	    {
+	      while (y < 0)
+		y++;
+	      //printf(" -%d- ",y);
+	      int pastVal =
+		graph[coll - 1][path[coll - 1][row]] -
+		graph[coll][path[coll][row] - 1];
+	      int newVal =
+		graph[coll - 1][path[coll - 1][row]] - graph[coll][y];
+	      if (abs (newVal) < abs (pastVal))
+		path[coll][row] = y;
+	    }
+	  if (atoi (argv[1]) != 0)
+	    {
+	      printf (" (%d,%d) %d ", coll, path[coll][row],
+		      graph[coll][path[coll][row]]);
+	    if (}
+		}
+		printf ("\n");}
+		return 0;}

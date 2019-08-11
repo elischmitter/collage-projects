@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+\newlist{alphalist}{enumerate}{1}
+\setlist[alphalist,1]{label=\textbf{\Alph*.}}
+
+\begin{document}
+\begin{flushleft}
+ Eli Schmitter\\
+\end{flushleft}
+\section{R18.1}
+A type parameter is a parameter That gives the type of a generic class is using in some way. An example of an type parameter is the underlined section of ArrayList\textless\underline{String}\textgreater example=new ArrayList\textless\textgreater(); The second block of <> is implicitly  assigned to string as well so a type parameter is not needed
+\section{R18.2}
+The difference between a generic class and a regular class is that a generic class takes a type parameter and a regular class does not. Generic class are useful when dealing with data structure's so you don't have to write a  regular class for each possible object that needs to be stored.
+\section{R18.6}
+\begin{enumerate}
+  \item Hashmap
+  \item Treemap
+  \item Hashtable
+  \item LinkedHasMap
+\end{enumerate}
+\section{E18.21}
+\begin{lstlisting}[language=Java]
+public static <E> boolean  isPalindrome(ArrayList<E> x) {
+ for(int i =0;i<x.size()-1;i++ ){
+     if(!(x.get(i).equals(x.get(x.size()-1-i)))){
+         return false;
+     }
+ }
+ return true;
+ }
+
+ \end{lstlisting}
+\end{document}

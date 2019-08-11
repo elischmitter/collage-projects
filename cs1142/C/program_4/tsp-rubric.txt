@@ -1,0 +1,76 @@
+TSP - grading rubric
+
+30 points total
+
+Point breakdown
+---------------
+ +1 printNode
+ +3 printTour
+ +3 tourSize
+ +3 distance
+ +3 tourDistance
+ +6 addNearestNeighbor
+ +8 addSmallestIncrease
+ +3 freeTour
+ 
+General deductions (once per assignment)
+----------------------------------------
+ -1 Changed signature, Node structure, or didn't implement required functions
+ -1 Warnings show up when compiled with -Wall
+ -1 Convoluted code 
+ -1 Missing/incomplete header comment 
+ -1 Inconsistent indentation
+ -1 Poor choice of variable names
+ -1 Inconsistent naming convention (e.g. switches from camel and snake case)
+ -1 Unused or dead code
+ -1 Leaving debug output in submitted program
+ -1 Lack of comments
+ -1 Missing any headers required by functions used
+ -1 Using floats instead of doubles, gives different answer (they were warned)
+ 
+Deductions by function
+---------------------- 
+ -1 printTour, minor bug, e.g. off-by-one, format not per spec
+ -2 printTour, major bug, e.g. infinite loop, crashes on NULL or 1-node tour
+ 
+ -1 tourSize, minor bug, e.g. off-by-one
+ -2 tourSize, major bug, e.g. infinite loop, crashes on NULL or 1-node tour
+ 
+ -0 distance, using pow or fabs, comment: unnecessary and less efficient
+ -1 distance, minor bug, e.g. typo in a formula
+ -2 distance, major bug, e.g. computing Manhattan distance
+ 
+ -1 tourDistance, not handling special case of empty linked list
+ -2 tourDistance, crashing on empty or 1-node linked list
+ -1 tourDistance, loop bug, e.g. off-by-one
+ -1 tourDistance, doesn't correctly add in last hop to bring back to first node
+ 
+
+ -1 addNearestNeighbor, doesn't properly handle inserting between last and first node
+ -1 addNearestNeighbor, bug in minimum distance algorithm
+ -1 addNearestNeighbor, not handling case of inserting into empty linked list
+  
+ -1 addSmallestIncrease, doesn't properly handle inserting between last and first node
+ -1 addSmallestIncrease, bug in minimum delta increase algorithm
+ -1 addSmallestIncrease, not handling case of inserting into empty linked list
+ 
+ -1 freeTour, not storing next pointer in temporary var before freeing Node
+    This will result in valgrind warnings about using invalid memory
+ -1 freeTour, bug resulting in some Nodes not being freed, or freeing something twice
+ 
+Deductions (only once even if it occurs in multiple heuristics)
+---------------------------------------------------------------
+ ok They get a different answer on large files as a result of a numeric precision
+    issue. E.g. Computing using fabs or extra term in smallest increase delta.    
+ -0 Reimplementing distance logic in multiple locations, comment: repeated code is evil
+ -1 Not initializing next member when creating new linked list
+    This will show up as an uninitialized value warning in valgrind.
+ -1 Tie break incorrect, e.g. using <= instead of <
+ -1 Magic constant for upper bound on distance, should use DBL_MAX or init to first distance 
+    Some choices (e.g. 1000) may lead to incorrect results on some inputs.   
+ -2 N^2 per insertion instead of N caused by by recomputing entire tour distance
+    rather than incremental distance when inserting a new city.
+ -1 Unnecessary malloc'ing of Nodes (even if memory correctly freed)
+ -1 Leaking memory (each instance, maximum -2 total)
+ -1 Accessing invalid memory (each instance, maximum -2 total)
+ -5 Does not use linked lists, not following directions

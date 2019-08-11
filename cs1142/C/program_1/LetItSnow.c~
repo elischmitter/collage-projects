@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(int argc, char* argv []){
+  if (argc != 6){
+    printf("%i",argc);
+    printf("LetItSnow <noun> <adjective> <noun> <adjective> <verb> <verb> \n");
+    return 1;
+  }
+  else {
+    printf("Oh, the %s outside is %s,\n",argv[0],argv[1]);
+    printf("But the %s is so %s,\n",argv[2],argv[3]);
+    printf("And since we've no place to %s,\n",argv[4]);
+    printf("Let it %s, let it %s, let it %s!\n",argv[5],argv[5],argv[5]);
+    return 0;
+       
+	
+
+}
+
+}
