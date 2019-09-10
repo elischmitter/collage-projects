@@ -1,0 +1,171 @@
+\documentclass[12pt]{article}
+\usepackage{times}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage[T1]{fontenc} % Added to be able to use \textquotedbl
+                         % \textquotedbl doesn't work in math mode
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+
+\begin{document}
+
+
+% http://tex.stackexchange.com/questions/116779/aligning-using-flushleft-and-flushright
+\begin{center} % just for vertical spacing and killing indent
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+{\large CS3311 Homework 1}
+  & Due: Wednesday, September 11, 2019, 8:59am \\
+  & Submission: Typed, pdf on Canvas \\
+  & (scanned submissions are not allowed)
+\end{tabular*}
+\end{center}
+\vspace{-0.2in}
+\rule{\textwidth}{0.5mm}
+\begin{small}
+The answers must be the original work of the author.  While discussion
+with others is permitted and encouraged, the final work should be done
+individually. You are not allowed to work in groups.  You are allowed to
+build on the material supplied in the class. Any other source must be
+specified clearly.
+\end{small}
+\rule{\textwidth}{0.5mm}
+
+Consider the following sets for questions {\bf 1} and {\bf 2}:
+\begin{center}
+$X = \{a, 2, \{a\}, [a], [a,a], [\emptyset, a] \}$ \hspace{0.10in} 
+\hspace{0.1in}
+$Y = \{a, 3,        [a], [a,a], \emptyset, [a,\emptyset] \}$ 
+\end{center}
+
+{\bf 1.} {\em (20 points)} Write out each of the sets listed below.
+
+
+  {\bf (a) } $\; X \cup Y$\\
+$\{a,2,\{a\},[a],[a,a],[\emptyset,a],3,\emptyset,[a,\emptyset]\}$\\
+
+
+  {\bf (b) } $\; X \cap Y$\\
+$\{a,[a],[a,a]\} $\\
+
+
+  {\bf (c) } $\; X - Y$\\
+$\{2,\{a\},[\emptyset,a]\}$\\\
+
+  {\bf (d) } $\; P(X - \{ [a,a], [\emptyset, a]\})$\\
+$\{\{\},\{a\},\{2\},\{\{a\}\},\{[a]\},\{a,2\},\{a,\{a\}\},\{a,[a]\},\{2,\{a\}\},\{2,[a]\},\{\{a\},[a]\},\{a,2,\{a\}\},\{a,2,[a]\}\\\{a,\{a\},[a]\},\{2,\{a\},[a]\},\{a,2,\{a\},[a]\}\}$\\
+
+
+  {\bf (e) } $\; \{a,1\} \times \{ a, [a], \{a\}, \emptyset \} $ 
+
+\vspace{0.1in}
+
+{\bf 2.} {\em (20 points)} State whether the following propositions are
+TRUE or FALSE.
+
+
+  {\bf (a) } $\; a \in X$\\
+True\\
+  {\bf (b) } $\; \{a\} \in X$\\
+True\\
+  {\bf (c) } $\; a \in Y$\\
+True\\
+  {\bf (d) } $\; \{a\} \in Y$\\
+False\\
+  {\bf (e) } $\; \emptyset \in X$\\
+False\\
+  {\bf (f) } $\; \emptyset \in Y$\\
+True\\
+  {\bf (g) } $\; \emptyset \subseteq Y$\\
+True\\
+  {\bf (h) } $\; \{ \emptyset \} \subseteq X$\\
+False\\
+  {\bf (f) } $\; \{ \emptyset \} \subseteq Y$\\
+True\\
+  {\bf (j) } $\; \{[a,a]\} \in X \times X$ \\
+True\\
+
+\hfill {\em Please turn the page over for additional questions. }
+\newpage
+
+{\bf 3.} {\em (20 points)} 
+
+{\bf (a) }
+Write the first 5 elements of the set $S_1$ defined recursively.
+Put the basis elements as the first members.
+Assume that the arithmetic computations defined in the recursive step 
+will be performed to obtain the new elements of $S_1$.
+
+\begin{quote}
+{\bf (i) Basis:} $[1,1] \in S_1$
+
+{\bf (ii) Recursive step:} If $[n,m] \in S_1$, then
+$[n+1, m+ 2(n+1)- 1 ] \in S_1$.
+
+{\bf (iii) Closure:} $S_1$ consists of exactly the elements that can be
+obtained by starting with the basis elements of $S_1$ and applying the
+recursive step finitely many times to construct new elements of $S_1$.
+\end{quote}
+
+$S_1= \{[1,1],[2,4],[3,9],[4,16],[5,25]\}$\\
+
+
+{\bf (b) }
+Write the first 6 elements of the set $S_2$ defined recursively.
+Put the basis elements as the first members.
+The first member of the basis sequence is a number, and the second
+member is a string. The recursive step performs an arithmetic addition on the 
+first member and string concatenation on the second member.
+The symbols $a, b$ are characters, not variables.
+\begin{quote}
+{\bf (i) Basis:} $[1,a] \in S_2$ and $[1,b] \in S_2$
+
+{\bf (ii) Recursive step:} If $[n,w] \in S_2$, then 
+$[n+2, awa] \in S_2$ and $[n+2, bwb] \in S_2$.
+
+{\bf (iii) Closure:} $S_2$ consists of exactly the elements that can be
+obtained by starting with the basis elements of $S_2$ and applying the
+recursive step finitely many times to construct new elements of $S_2$.
+\end{quote}
+
+$S_2=\{[1,a],[1,b],[3,aaa],[3.bab],[3,aba],[3,bbb]\}$
+
+\vspace{0.1in}
+
+{\bf 4.} {\em (5+15 points)}
+
+Consider the following infinite set $A$.
+
+$A = \{ 1, 5, 13, 29, 61, \ldots \} $
+
+{\bf (a) }
+Describe the pattern to obtain an element from the previous element.\\
+
+{\bf (b) }
+ Give a recursive definition of the set $A$.
+
+\vspace{0.1in}
+
+{\bf 5.} {\em (5+15 points)}
+
+Consider the following infinite set $B$.
+
+$B = \{ a, babb, bbabbbb, bbbabbbbbb, \ldots \} $
+
+{\bf (a) }
+Describe the pattern to obtain an element from the previous element.\\
+if $w \in B$ then $bwbb \in B$\\
+
+{\bf (b) }
+ Give a recursive definition of the set $B$.\\
+\begin{quote}
+{\bf (i) Basis:} $a \in B$\\
+{\bf (ii) Recursive step:} If $w\in B$, then $bwbb \in B $.
+
+{\bf (iii) Closure:} $B$ consists of exactly the elements that can be
+obtained by starting with the basis elements of $B$ and applying the
+recursive step finitely many times to construct new elements of $B$.
+\end{quote}
+\end{document}
+
+
