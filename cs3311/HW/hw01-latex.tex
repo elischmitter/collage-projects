@@ -56,7 +56,8 @@ $\{2,\{a\},[\emptyset,a]\}$\\\
 $\{\{\},\{a\},\{2\},\{\{a\}\},\{[a]\},\{a,2\},\{a,\{a\}\},\{a,[a]\},\{2,\{a\}\},\{2,[a]\},\{\{a\},[a]\},\{a,2,\{a\}\},\{a,2,[a]\}\\\{a,\{a\},[a]\},\{2,\{a\},[a]\},\{a,2,\{a\},[a]\}\}$\\
 
 
-  {\bf (e) } $\; \{a,1\} \times \{ a, [a], \{a\}, \emptyset \} $ 
+  {\bf (e) } $\; \{a,1\} \times \{ a, [a], \{a\}, \emptyset \} $ \\
+$ \{[a,a],[a,[a]],[a,\{a\}],[a,\emptyset],[1,a],[1,[a]],[1,\{a\}],[1,\emptyset]\} $
 
 \vspace{0.1in}
 
@@ -142,7 +143,12 @@ $A = \{ 1, 5, 13, 29, 61, \ldots \} $
 Describe the pattern to obtain an element from the previous element.\\
 
 {\bf (b) }
- Give a recursive definition of the set $A$.
+ Give a recursive definition of the set $A$.\\
+{\bf (i) Basis:} $1 \in A$\\
+{\bf (ii) Recursive step:} If $n \in A$, then $(n* 2)+3\in A$.\\
+{\bf (iii) Closure:} $A$ consists of exactly the elements that can be
+obtained by starting with the basis elements of $A$ and applying the
+recursive step finitely many times to construct new elements of $A$.
 
 \vspace{0.1in}
 
