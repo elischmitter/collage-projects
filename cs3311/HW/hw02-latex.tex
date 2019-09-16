@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{times}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\large CS3311 Homework 2} \hfill
+Due date: {\bf Monday}, September 16, 2019, 8:59am\\
+\hfill
+Submission: Typed, on Canvas (scanned submissions are not allowed)
+\vspace{-0.1in}
+
+\rule{\textwidth}{0.5mm}
+\begin{small}
+The answers must be the original work of the author.  While discussion
+with others is permitted and encouraged, the final work should be done
+individually. You are not allowed to work in groups.  You are allowed to
+build on the material supplied in the class. Any other source must be
+specified clearly.
+\end{small}
+\rule{\textwidth}{0.5mm}
+
+{\bf 1.} {\em (100 points)} 
+
+Consider the set $S_1$ constructed recursively. 
+The first member of the basis sequence is a number, and the second
+member is a string. The recursive step performs an arithmetic addition on the 
+first member and a string concatenation on the second member.
+The symbols $a, b$ are characters, not variables.
+\begin{quote}
+{\bf (i) Basis:} $[1,a] \in S_1$ and $[1,b] \in S_1$
+
+{\bf (ii) Recursive step:} If $[n,w] \in S_1$, then 
+$[n+2, awa] \in S_1$ and $[n+2, bwb] \in S_1$.
+
+{\bf (iii) Closure:} $S_1$ consists of exactly the elements that can be
+obtained by starting with the basis elements of $S_1$ and applying the
+recursive step finitely many times to construct new elements of $S_1$.
+\end{quote}
+
+Use induction to prove that the first member of each pair represents the
+length of the string which is the second member. 
+In other words, for all $[n,m] \in S_1 \; n=$length$(m)$.
+
+The induction proof should present the following three components clearly:
+  \begin{quote}
+    Basis \\
+    Inductive hypothesis \\
+    Inductive step
+  \end{quote}
+{\bf(1)}
+\begin{quote}
+ {\bfseries {Basis:}}
+ The first members in the set is $[1,a]$ and $[1,b]$.  $1$=length$(a)$ and $1$=length$(b)$ therefor the basis of induction holds\\
+ {\bfseries {Inductive hypothesis:}} Assume that each member of $S_1$ which has been formed by applying the recursive step n times, are in the form $[n,m] $ and has the property that$  n=$length$(m)$ property \\
+{\bfseries Inducive step:}
+let $\omega$ be an element in $S_1$  that was made by applying the recursive step n time, $\omega$ is of the form $[n,m] $ and has the property that  $ n = $length$(m)$. The next element,$x$ that will be added to set $S_1$ after $n+1$ steps. To obtain $y$ apply the recurisve step once on $\omega$. $y= [n+2,ama]$ or $y= [n+2,bmb]$. Both definitions add 2 to $n$ and grows the length of $m$ by two. That means that if $n =$ length$(m)$ then $n+2 = $length$(cmc)$ where c is either a or b. we assumed  $n =$ length$(m)$ in the inductive hypothesis and therefor, conclude by mathematical induction that for all $[n,m] \in S_1 \; n= $length$(m)$.
+\end{quote}
+\end{document}
