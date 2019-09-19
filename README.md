@@ -1,1 +1,1 @@
-# collage-projects
+# college-projects
