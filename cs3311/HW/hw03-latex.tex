@@ -1,0 +1,132 @@
+\documentclass[12pt]{article}
+\usepackage{times}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{listings} % Package to use a math escape in verbatim mode
+\lstset{
+basicstyle=\ttfamily,
+mathescape
+}
+
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\large CS3311 Homework 3} \hfill
+Due date: {\bf Friday}, September 27, 2019, 8:59am\\
+\hfill
+Submission: Typed, on Canvas (scanned submissions are not allowed)
+\vspace{-0.1in}
+
+\rule{\textwidth}{0.5mm}
+\begin{small}
+The answers must be the original work of the author. While discussion
+with others is permitted and encouraged, the final work should be done
+individually. You are not allowed to work in groups. You are allowed to
+build on the material supplied in the class. Any other source must be
+specified clearly.
+\end{small}
+\rule{\textwidth}{0.5mm}
+
+
+{\bf 1.} {\em (65 points)} 
+Consider the following Python program that computes the sum of first
+$n$ odd numbers and verifies that the sum is equal to $n^2$.
+
+\begin{small}
+\begin{lstlisting}
+# Implements: Sum of first n odd numbers is n^2
+
+import operator
+
+n = input('Pick a number greater than or equal to 0: ') # upper limit
+print ('You entered n = %s. \n' % n)
+
+pair = [1, 1] # the basis pair
+print ('pair is %s \n' % pair)
+
+for i in range (1,n+1): # executes for i = 1, 2, ..., n
+pair[0] = pair[0] + 1
+pair[1] = pair[1] + pair[0]*2 - 1
+print ('pair is %s \n' % pair)
+
+if operator.eq (pair[1],pair[0]**2): 
+print "True: the second member is the square of the first."
+else:
+print "False: the second member is not the square of the first."
+\end{lstlisting}
+\end{small}
+
+
+Prove using induction that the program always prints\\
+``{\tt True: the second member is the square of the first.}''
+
+You must present the proof based on the code and on the number of
+iterations of the {\tt for} loop.
+Clearly label the {\bf basis}, {\bf
+inductive hypothesis}, and {\bf inductive step}.
+
+\hfill {\em Please flip the page for additional questions. }
+\newpage
+{\bf Basis:} The basis step is made by running the loop $0$ times. The value of pair after running the loop 0 times is $[1,1]$. $1 = 1^2$ there for the basis step is true 
+
+{\bf Inductive hypothesis}
+assume $[x,y]$ are the value of pair after $n$ iterations of the loop, and holds the propriety that $y = x^2$
+
+{\bf Inductive step}
+let $[z,a]$ be the value of pair after $n+1$ iterations of the loop. Because $[z,a]$ is made after n+1 iterations of the loop then $[z,a]= [x+1,y+(x+1)*2-1]$ Evaluate $y+(x+1)*2-1$
+\begin{align*}
+y+(x+1)*2-1 &= x^2+(x+1)2-1 & \text{Inductive hypothesis}\\
+&= x^2+2x+2-1\\
+&=x^2+2x+1\\
+&=(x+1)^2
+\end{align*}
+This shows that $a=z^2$ for $ n + 1 $ iterations of the loop. This completes the inductive step.\\
+The Basis step holds and the inductive step holds when assuming the inductive hypothesis therefor by mathematical induction it holds true for all n iterations of the loop.
+
+\newpage
+{\bf 2.} {\em (25 points)} Write the results of the following set
+concatenations.
+
+{\bf (a)} $\{ b \} \{ a, aa, aaa, \ldots \}$\\
+$\{ba,baa,baaa,\ldots\}$
+
+{\bf (b)} $\{ b \} \{ \lambda, a, aa, aaa, \ldots \}$\\
+$\{b,ba,baa,baaa,\ldots\}$
+
+{\bf (c)} $\{ b \} \{ a \}^*$\\
+$\{b,ba,baa,baaa,\ldots\}$
+
+{\bf (d)} $\{ b \} \{ a \}^* \{ b \} $\\
+$\{bb,bab,baab,baaab,\ldots\}$\\
+{\bf (e)} $\{ a \} \{ a \}^*$\\
+$\{a,aa,aaa,aaaa\ldots\}$\\
+
+\vspace{0.2in}
+{\bf 3}. {\em (10 points, 1+4 points each)}
+State whether the following equalities are true or false {\em (1 points)}.
+Explain your answer {(4 points)}.
+
+\begin{tabbing}
+12345 \= 1234567890 \= \kill
+{\bf (a)}
+\>
+$ \{a\}^* \{b\}^*$ \> $ = \{a\}^* \cup \{b\}^* $
+\\
+False, because $\{a\}^* \cup \{b\}^* $ dose not concatanate $\{a\}^*$ with $\{b\}^*$ it only makes:\\ $\{\lambda, a ,aa ,aaa\ldots,b,bb,bbb,\ldots\}$\\
+
+
+{\bf (b)}
+\>
+$\{a\}^* \cup \{b\}^*$ \> $ = \{b\}^* \cup \{a\}^*$\\
+True, because $\cup$ is comunitive
+
+\end{tabbing}
+
+\end{document}
+

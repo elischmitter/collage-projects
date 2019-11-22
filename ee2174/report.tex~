@@ -1,0 +1,14 @@
+\begin{document}
+
+
+\section{bill of}
+\begin{table}[]
+\begin{tabular}{llllll}
+Item number & Name of Part      & Description                        & Quantity & Part number      & link to buy                                                                                                       \\
+1           & NOT gates         & IC INVERTER 6CH 6-INP 14DIP        & 3        & SN7404N          & https://www.digikey.com/product-detail/en/texas-instruments/SN7404N/296-14642-5-ND/555980                         \\
+2           & 2 input AND gates & IC GATE AND 6CH 2-INP 20DIP        & 1        & SN74AS808BN      & https://www.digikey.com/product-detail/en/texas-instruments/SN74AS808BN/296-6374-5-ND/378208                      \\
+3           & 4-3-3 AND gate    & Triple 4Å|3Å|3Å|Input NORGate         & 1        & MC10H106L-ND     & https://www.digikey.com/product-detail/en/on-semiconductor/MC10H106L/MC10H106L-ND/1478178                         \\
+4           & triple or gate    & Logic Gates Triple 3-input OR gate & 2        & 74HC4075PW-Q100J & https://www.mouser.com/ProductDetail/Nexperia/74HC4075PW-Q100J?qs=sGAEpiMZZMtMa9lbYwD6ZJLSWB2FZLS4NlEockqn4Ag\%3D
+\end{tabular}
+\end{table}
+\end{document}

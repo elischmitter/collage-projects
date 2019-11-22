@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{epstopdf}
+\setlength{\parindent}{0in}
+\usepackage{graphicx}
+\graphicspath{ {"}}
+\setlength{\parskip}{0.1in}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\today}
+\lhead{Eli Schmitter}
+\chead{HW1}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand\de{\stackrel{\mathclap{\normalfont\mbox{{\tiny D.E.}}}}{=}}
+\begin{document}
+\begin{enumerate}
+\item
+\begin{tabular}{|c|c|c||c|}
+\hline
+A & B & C & F \\
+\hline
+\hline
+  0	&   0	&  	1&	0   \\
+  0 	&   1 	&	0& 	1  \\
+  0	&   1	&	1&       1 \\
+  1	&   0	& 	0&       1 \\
+  1	&   0	&	1&      0\\
+  1	&   1	&	0&       1\\
+  1	&   1	&	1&     0\\
+
+\hline
+\end{tabular}
+\item
+\begin{enumerate}
+\item $X=(A+B+C')\de (A' B'  C)'$
+\item $Y=(A(BC')+C)\de ((A' +( B'+C'))C')'$
+\item $Z=(A'+C)'(AB)+C'\de ((AC')+(A'+B'))C)'$
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item $X=A'+B=(AB')'$
+\item $Y=(AB')+(A'B)+(A'B')=((AB)'(A'B)'(A'B')')'$
+\end{enumerate}
+\item
+\begin{enumerate}
+\item
+\begin{tabular}{|c|c|c||c|}
+\hline
+A & B & C & F \\
+\hline
+\hline
+0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 1\\
+\hline
+\end{tabular}
+\item
+$F=(A'B'C')+(A'B'C)+(AB'C')+(ABC)$
+\end{enumerate}
+\item
+\begin{enumerate}
+
+
+\end{enumerate}
+\end{enumerate}
+\end{document}

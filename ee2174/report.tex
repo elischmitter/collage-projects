@@ -1,0 +1,59 @@
+\documentclass[paper=letter, fontsize=12pt]{scrartcl}
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{subcaption}
+\pagestyle{fancy}
+\usepackage{graphicx}
+\usepackage{threeparttable}
+\usepackage{multirow}
+\usepackage{booktabs}
+\doublespacing
+\UseRawInputEncoding
+
+
+\title{	
+\normalfont \normalsize
+\hrulefill \\[.5cm] 
+\Huge EE2174  \\ % The assignment title
+\normalfont \normalsize
+Project 1: Maze solver \\[0.5cm]
+\hrulefill% Thick bottom horizontal rule
+}
+\author{Eli Schmitter }
+\date{\normalsize\today}
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\section{Intro:}
+This project was to make a mazing solving logic circuit. The circuit takes in 6 inputs and has two outputs. The maze was simple and more of a path. This is an interesting problem to solve with given logic gates. This could possibly be made larger to solve problems instead of using slower and processing heavy algorithms like DijkstraÅfs algorithm to solve mazes.
+\section{Design Process:} 
+The first step of the design process is to understand the problem. There were some facts of the constraints that would help one in the later steps of the process. One of the key ones was the fact that ``You may always assume there is only one correct direction to go''. This is would help in the next step making the truth table.\par
+The truth table was the biggest step in the design process. This is because this is where the logic equations come from that that the circuit is bacmid around. The table was first written out on paper. The table when there all the possibilities for it. Then to the first step many of the values where ``do not care'' conditions. This fact made making the table easier. I went down the line and was thing how the block should move in each possibility and writing the output in $m_0$ and $m_1$.\par
+After the table comes the kmap. This would help minimize the equation and has less logic gates overall. then with the kmap done the build of the circuit in logicism and tested it. The circuit worked as intended. 
+\section{Bill of Materials:}
+\begin{table}[htbp]
+         \centering
+        \small
+        \setlength\tabcolsep{2pt}
+        \begin{tabular}{|p{.75cm}|p{1cm}|p{3cm}|l| p{3cm}|p{7cm}|}
+          \hline
+  Item number & Name of Part      & Description                        & Quantity & Part number      & link to buy\\\hline
+  1           & NOT gates         & IC INVERTER 6CH 6-INP 14DIP        & 3        & SN7404N          & https://www.digikey.com/product-detail/en/texas-instruments/SN7404N/296-14642-5-ND/555980 \\
+  \hline 
+  2           & 2 input AND gates & IC GATE AND 6CH 2-INP 20DIP        & 1        & SN74AS808BN      & https://www.digikey.com/product-detail/en/texas-instruments/SN74AS808BN/296-6374-5-ND/378208\\
+ \hline
+  
+ 3           & 4-3-3 AND gate    & Triple 4Å|3Å|3Å|Input NORGate         & 1        & MC10H106L-ND     & https://www.digikey.com/product-detail/en/on-semiconductor/MC10H106L/ MC10H106L-ND/1478178 \\
+ \hline 
+4           & triple or gate    & Logic Gates Triple 3-input OR gate & 2        &74HC4075PW-Q100J & https://www.mouser.com/ProductDetail/ Nexperia/74HC4075PW-Q100J?qs=sGAEpiMZZMtMa9lbYwD6ZJL SWB2FZLS4NlEockqn4Ag\%3D\\
+\hline 
+\end{tabular}
+\end{table}
+\end{document}

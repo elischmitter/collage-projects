@@ -1,0 +1,149 @@
+\documentclass[12pt]{article}
+\usepackage{times}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+
+
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\large CS3311 Homework 4} \hfill
+Due date: {\bf Wednesday}, October 2, 2019, 8:59am\\
+\hfill
+Submission: Typed, on Canvas (scanned submissions are not allowed)
+\vspace{-0.1in}
+
+\rule{\textwidth}{0.5mm}
+\begin{small}
+The answers must be the original work of the author.  While discussion
+with others is permitted and encouraged, the final work should be done
+individually. You are not allowed to work in groups.  You are allowed to
+build on the material supplied in the class. Any other source must be
+specified clearly.
+\end{small}
+\rule{\textwidth}{0.5mm}
+
+{\bf 1.} {\em (10+10 points)}
+Consider the following regular set over $\Sigma=\{a,b\}$.
+
+\[
+S_1 = \{a\}^* \, \{a,b\}^* \, \{b\}^*
+\]
+
+{\bf (a)} Write the regular set as a regular expression.\\
+$a^* (a\cup b)^* b^*$
+
+{\bf (b)} Which of the following correctly represents the language given by
+$S_1$ (2 points)?
+\\
+Explain your answer (8 points).
+
+\begin{quote}
+1. Set of all strings that start with `$a$'
+\\
+2. Set of all strings that end with `$b$'
+\\
+3. Set of all strings that start with `$a$' and end with `$b$'
+\\
+4. Set of all strings in $\Sigma^*$
+\\
+5. None of the above (provide your own answer and explanation.)
+\end{quote}
+
+4. is the corect answer. $a^*$ and $b^*$ can be $\lambda$  this means $a^* (a\cup b)^* b^* =(a\cup b)^*$ .$\Sigma$ is $(a\cup b)$ therefor $a^* (a\cup b)^* b^* =(\Sigma)^*$   \\\\
+{\bf 2.} {\em (10+10 points)}
+Consider the following regular expression over $\Sigma=\{a,b\}$.
+
+\[
+S_2 = a^+ \, (a \cup b )^*  \, b^+
+\]
+
+{\bf (a)} Write the regular expression as a regular set.
+
+{\bf (b)} Which of the following correctly represents the language given by
+$S_2$ (2 points)?
+\\
+Explain your answer (8 points).
+
+\begin{quote}
+1. Set of all strings that start with `$a$'
+\\
+2. Set of all strings that end with `$b$'
+\\
+3. Set of all strings that start with `$a$' and end with `$b$'
+\\
+4. Set of all strings in $\Sigma^*$
+\\
+5. None of the above (provide your own answer and explanation.)
+\end{quote}
+
+\newpage
+{\bf 3.} {\em (10+10 points)}
+Consider the following regular expression over $\Sigma=\{a,b\}$.
+
+\[
+S_3 = a^+ \, (a \cup b )^+  \, b^+
+\]
+
+{\bf (a)} Write the regular expression as a regular set.\\
+$ \{a\}^+ \, \{a , b\}^+  \, \{b\}^+$\\
+{\bf (b)} Which of the following correctly represents the language given by
+$S_3$ (2 points)?
+\\
+Explain your answer (8 points).
+
+\begin{quote}
+1. Set of all strings that start with `$a$'
+\\
+2. Set of all strings that end with `$b$'
+\\
+3. Set of all strings that start with `$a$' and end with `$b$'
+\\
+4. Set of all strings in $\Sigma^*$
+\\
+5. None of the above (provide your own answer and explanation.)
+\end{quote}
+
+5. is the corect answer. The language will be the set of all strings that start with `$a$' and end with `$b$' and with size grater than 2. Each part of the reguler expration can not be $\lambda$ so there must be at least 3 characters long.
+
+{\bf 4.} {\em (10+10 points)}
+Consider the set $L_4$ of strings over
+$\Sigma = \{ 1, 2, a, b, c \}$ that
+ start and end with a number.
+
+Strings can have a length of one or greater.
+
+{\bf (a)} Give a regular set for $L_4$ (10 points) . Explain your answer (10 points).
+
+$(1\cup2)^+(1\cup 2\cup a\cup b\cup c )^* (1\cup2)^+$\\
+the only constrate is that the string must start and end with a number. There can be anything including $\lambda$ in betwean the two numbers.  
+
+{\bf (b)} Write the regular set in part (a) as a regular expression.
+
+$\{1,2\}^+\{1, 2, a, b, c \}^* \{1,2\}^+$
+
+\vspace{0.1in}
+{\bf 5.} {\em (10+10 points)}
+Consider the set $L_5$ of strings over
+$\Sigma = \{ 1, 2, a, b, c \}$ 
+that contain exactly two numbers and the sum of the numbers is even.
+
+{\bf (a)} Give a regular set for $L_5$ (10 points). Explain your answer
+(10 points).\\
+$\{2\}\{2, \lambda\}$\\ This has 2 and 22 as the only numbers in the set and the sum of 2 and 22 is 24 witch is even.\\
+{\bf (b)} Write the regular set in part (a) as a regular expression\\
+$2(2,\lambda)$
+
+
+
+
+
+
+\end{document}
+
+
