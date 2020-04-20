@@ -1,0 +1,124 @@
+\documentclass[12pt]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel} 
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Eli Schmitter}
+\lhead{HW4}
+\rfoot{\thepage}
+
+\begin{document}
+\section*{2.3}
+         {\bf 2}
+         \begin{align*}
+           P(A)&=.5\\
+           P(A\cap B^C)&=.4\\
+           &=P(A)P(B^c)&&\text{A and B are assumed to be independent}\\
+           &\Rightarrow\\
+           .4&=.5*(1-P(B))\\
+           1-\frac{.4}{.5}&=P(B)\\
+           .2&=P(B)
+         \end{align*}
+  {\bf 6}
+             \begin{align*}
+               P(A \cap B)&= P(A)P(B|A)\\
+               P(A)&= .056\\
+               P(B|A)&=.027\\
+               &\Rightarrow\\
+               P(A\cap B)&= .056*.027\\
+               &=.001512
+             \end{align*}
+                 {\bf 10}
+                 \begin{enumerate}[label={\bf \alph*}]
+                 \item .3                   
+                 \item .2
+                 \item
+                   \begin{align*}
+                     P(A|B)&=\frac{P(A\cap B)}{P(B)}\\
+                       &=\frac{.1}{.3}\\
+                       &=.\bar{3}
+                   \end{align*}
+                 \item
+                   
+                   \begin{align*}
+                     P(A|B)&=\frac{P(A\cap B)}{P(B)}\\
+                       &=\frac{.1}{.2}\\
+                       &=.5
+                   \end{align*}
+                 \item
+                   \begin{align*}
+                     P(A^c|B)&=\frac{P(A^c\cap B)}{P(B)}\\
+                     &=\frac{.2}{.3}\\
+                       &=.\bar{6}
+                   \end{align*}
+                 \item
+                   \begin{align*}       
+                     P(A^c|B)&=\frac{P(A^c\cap B)}{P(B)}\\
+                     &=\frac{.1}{.2}\\
+                     &=.5
+                   \end{align*}
+                 \end{enumerate}
+                 {\bf 12}
+                 \begin{enumerate}[label={\bf \alph*}]
+                 \item 
+                 \begin{align*}
+                   P(A \cap B) &= P(A)P(B)\\
+                   &=.2*.4\\
+                   &=.08
+                 \end{align*}
+               \item
+                 \begin{align*}
+                   P(S|T)&=\frac{P(S \cap T)}{P(T)}\\
+                   &=\frac{.8}{.4}\\
+                   &=.2
+                 \end{align*}
+                 \end{enumerate}
+        {\bf 18}
+        \begin{align*}
+          P(\text{Black car}|\text{ Small car})&=\frac{P(\text{Black car} \cap \text{Small car})}{P(\text{Small car})}\\
+              P(\text{Small car})&=\frac{340}{750}\\
+              &=.45\\
+              P(\text{Black car} \cap \text{Small car})&=\frac{71}{750}\\
+              &=.094\\
+              &\Rightarrow\\
+              P(\text{Black car}|\text{Small car})&= \frac{.094}{.45}\\
+                &=.21
+        \end{align*}
+        
+        {\bf 20}
+        \begin{enumerate}[label={\bf \alph*}]
+        \item $$P(G \cap C ) = P(G)P(C|G)=.7*.005= .0035$$
+        \item
+          \begin{align*}
+            P(C)&= P(G \cap C) + P(M \cap C) + P(P \cap C)\\
+            &= P(G)P(C|G) +P(M)P(C|M) +P(P)P(C|P)\\
+            &= .7 * .005 + .2* .01 + .1 * .025\\
+            &= .008
+          \end{align*}
+        \item
+          \begin{align*}
+            P(G|C)&= \frac {P(G \cap C)}{P(C)}\\
+            &=\frac{.0035}{.008}\\
+            &=.4375
+          \end{align*}
+        \end{enumerate}
+            {\bf 34}
+            $$P(A^C)=.1,P(B^C)=.05,P(C^c)=.1,P(D^c)=.2$$
+            \begin{align*}
+              P(\text{sub 1}&=P(A \cap B)\\
+              &=P(A)P(B)\\
+              &=(1-P(A^C))*((1-P(B^C))\\
+              &=(.9)(.95)\\
+              &=.855\\
+              \\
+              P(\text{sub 2})&= 1-(1-.1)(1-.2)\\
+              &=.980\\
+              \\
+              P(\text{system})&=1-(1-.980)(1-.855)\\
+              &=.997
+            \end{align*}
+\end{document}

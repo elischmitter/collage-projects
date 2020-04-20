@@ -1,0 +1,155 @@
+\documentclass[12pt]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel} 
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Eli Schmitter}
+\lhead{HW6}
+\rfoot{\thepage}
+
+\begin{document}
+\section*{2.5}
+   {\bf 4}
+   \begin{enumerate}[label={\bf \alph*}]
+   \item
+      \begin{align*}
+         \mu_V&=\mu_{V_1+V_2}\\
+              &=\mu_{V_1}+\mu_{V_2}\\
+              &= 12+6\\
+              &=18
+      \end{align*}
+   \item
+      \begin{align*}
+         \sigma_V^2 &= \sigma_{V_1+V_2}^2\\
+                  &= \sigma_{V_1}^2+\sigma_{V_2}^2\\
+          \sigma_V&= \sqrt{1^2 + .5^2}\\
+                  &= 1.12\\
+      \end{align*}
+   \end{enumerate}
+   {\bf 8}
+   \begin{enumerate}[label={\bf \alph*}]
+   \item
+   \begin{align*}
+      \mu_{\text{case}} &= \mu_{24*\text{bottle}}\\
+                        &= 24\mu_{\text{bottle}}\\
+                        &= 24 * 20.01\\
+                        &= 480.24\text{ ounces}
+   \end{align*}
+   \item
+      \begin{align*}
+      \sigma_{\text{case}} &=\sigma_{24*\text{bottle}}\\
+                           &=|24|\sigma_\text{bottle}\\
+                           &=24*.02\\
+                           &= .48 \text{ ounces}
+      \end{align*}
+      \item
+      \begin{align*}
+      E(\bar{x})&= \frac{E(24*x)}{24}\\
+                    &=\frac{24}{24}*20.01\\
+                    &=20.01
+      \end{align*}
+      \item
+      \begin{align*}
+      \sigma &= \sqrt{\frac{\sigma^2_x}{n-1}}\\
+             &= \frac{\sigma_x}{\sqrt{n-1}}\\
+             &= \frac{.02}{4.795}\\
+             &= .00417
+      \end{align*}
+      \item
+      \begin{align*}
+      \sigma &= \sqrt{\frac{\sigma^2_x}{n-1}}\\
+      .0025  &=\frac{.002}{\sqrt{n-1}}\\
+      n-1    &= \frac{.02}{.0025}^2\\
+      n      &= 8^2 +1 \\
+             &= 65
+     \end{align*}
+ \end{enumerate}
+   
+\section*{4.2}
+   {\bf 2}
+        $$p(x)=P(X=x)=\frac{n!}{x!(n-x)!}P^x(1-p)^{n-x}$$
+      $$P(x)=\frac{9!}{x!(9-x)!}(.4)^x(1-.4)^{9-x}$$
+      \begin{enumerate}[label={\bf \alph*}]
+        \item $P(X>6)=P(7)+P(8)+P(9)=.02123+.00354+.0000262=.0250$
+        \item $P(X \geq 2)=1-(P(0)+P(1))=1-(.07054)=.929$
+        \item $P(2 \leq X < 5) = p(2)+P(3)+P(4) =.1612+.2508+.2508=.6628$
+        \item $P(2 < X \geq 5) = p(2)+P(3)+P(4) =.1672+.2508+.2508=.6688$
+        \item $P(0)= \frac{9!}{0!(9-0)!}(.4)^0(1-.4)^{9-0}=.010$
+        \item $P(7)= \frac{9!}{7!(9-7)!}(.4)^7(1-.4)^{9-7}=.0213$
+        \item $\mu_X= np = 9*.4=3.6$
+        \item $\sigma^2_X=np(1-p)=2.16$
+      \end{enumerate}
+   
+   
+   {\bf 4}
+         \begin{enumerate}[label={\bf \alph*}]
+         \item
+         Bin(10,.75) $\Rightarrow P(X=10)=\frac{10!}{10!}.75^10*(0.75)^{10-10}=.05631$
+         \item
+         $P(X=8)=\frac{10!}{8*!(10-8)!}.75^8*(0.75)^{10-8}=.282$
+         \item
+         $P(X\geq 8) = P(X=8)+P(X=9)+P(X=10)=.282+.1877+.05631=.5256$
+         \end{enumerate}
+   
+   
+   {\bf 8}
+            \begin{enumerate}[label={\bf \alph*}]
+            \item $P(X=4)=\frac{20!}{4!(20-4)!}.2^4*(0.25)^{20-4}=.218$
+            \item $P(X<3)=P(X=0)+P(X=1)+P(X=2)=.0116+.0575+.136$
+            \item $P(X=0)=\frac{20!}{0!(20-0)!}.2^0*(0.25)^{20-0}=.01153$
+            \item $n*p= 20*.20=4$
+            \item $\sqrt{n*p(1-p)}=\sqrt{4(.8)}=1.79$
+            \end{enumerate}
+   {\bf 22}
+      \begin{align*}
+      x&=\text{Bin}(n,p)\\
+       &\Rightarrow\\
+       P(X=x)&={{n}\choose{x}}*p^{x}(1-p)^{n-x}\\
+       \text{let x= n-x}\\
+       Y(X=n-x)&={{n}\choose{n-x}}*p^{n-x}(1-p)^{n-(n-x)}\\
+               &={{n}\choose{x}}*p^{n-x}(1-p)^{x}\\
+               &={{n}\choose{x}}*(1-p)^{x}p^{n-x}
+      \end{align*}
+      This implies $p=(1-p)$ if n-x = X.
+
+\section*{4.3}
+ {\bf 2}
+   Has a mean of 6 pits per cm$^2$ this implies a Poisson(6) distribution.
+   \begin{enumerate}[label={\bf \alph*}]
+      \item $P(X=8) = p(8)= e^{-6}\frac{6^8}{8!}=.103$
+      \item $P(X = 2) = p(2) =  e^{-6}\frac{6^2}{2!}=0.045$
+      \item $P(X<3)= p(0)+p(1)+p(2)=.062$
+      \item $P(X>1)= 1-(p(1)+p(0))=.982$
+      \item $\mu_x=\lambda=6$
+      \item $\sigma_x=\sqrt{\lambda}=\sqrt{6}=2.45$
+   \end{enumerate}
+ 
+ 
+ {\bf 4}
+ poisson distribution with average of 6 tracks $\Rightarrow \lambda = 6$ 
+    \begin{enumerate}[label={\bf \alph*}]
+    \item $P(x=7)=p(7)=e^{-6}\frac{6^7}{7!}=.13767$
+    \item $P(X\geq 3)= 1-(p(0)+p(1)+p(2))= .938$
+    \item $P(2<X<7)=p(3)+p(4)+p(5)+p(6)=.544$
+    \item $\mu_X = \lambda = 6$
+    \item $\sigma^2_X=\lambda \Rightarrow \sigma_X = \sqrt{\lambda}= \sqrt{6}=2.45$
+   \end{enumerate}
+ 
+ 
+ 
+ {\bf 14}
+  \begin{align*}
+  P(X=0)= 0.1353 &=e^{-\lambda}*\frac{\lambda^0}{0!}\\
+        &=e^{-\lambda}\\ 
+        &\Rightarrow\\ 
+ \lambda&=\text{ln}(.1353)\\
+        &= 2\\
+  \mu_X &= \lambda\\
+        &= 2
+  \end{align*}
+\end{document}

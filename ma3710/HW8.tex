@@ -1,0 +1,117 @@
+\documentclass[12pt]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel} 
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Eli Schmitter}
+\lhead{HW6}
+\rfoot{\thepage}
+
+\begin{document}
+\section*{4.7}
+   \subsection*{4}
+      \begin{enumerate}[label={\bf \alph*}]
+      \item
+         \begin{align*}
+                  \mu_X&=\frac{1}{\lambda}\\
+                     12&=\frac{1}{\lambda}\\
+               \lambda &=\frac{1}{12}\\
+         \end{align*}
+      \item
+         \begin{align*}
+                      P(X\leq m)&=.5\\
+            1-e^{-\frac{1}{12}m}&=.5\\\
+                              m &=-12\text{ln}(.5)\\
+                                &= 8.318\\
+         \end{align*}
+         \item 
+            \begin{align*}
+               \sigma^2_X &= \frac{1}{\lambda^2}\\
+                          &= 144\\
+               \sigma_X &= 12
+            \end{align*}
+         \item
+          \begin{align*}
+                      P(X\leq p_{65})&=.65\\
+            1-e^{-\frac{1}{12} p_{65}}&=.65\\
+                        \lambda &=\frac{1}{12}\\
+                              m &=-12\text{ln}(.35)\\
+                                &= 12.59
+         \end{align*}
+      \end{enumerate}
+\section*{4.11}
+   \subsection*{2}
+         N(.08, .0001)
+   \begin{enumerate}[label={\bf \alph*}]
+      \item
+
+      \begin{align*}
+         \frac{20.2}{.2}     &\leq X\\
+         \frac{X-\mu}{\sigma}&=Z\\
+                             &\Rightarrow\\
+                       .7881 &\leq Z\\
+                       P(X>20.2)&=1-.7881=.2119
+      \end{align*}
+      \item
+      \begin{align*}
+         10\%&\Rightarrow -1.28=Z\\
+         -1.28*\sigma+\mu&=.0672\\
+         .0672*250&=16.8\\
+         &\Rightarrow\\
+         16.8 \text{mm thick}
+      \end{align*}
+      \item
+      Yes due to the Central Limit Theorem, one can use normal distribution.
+      \begin{align*}
+       z&=\frac{.1-.08}{.01}\\
+        &=2\\
+        &\Rightarrow\\
+        P(X>.1)1-.9772=.0228
+      \end{align*}
+   \end{enumerate}
+   \subsection*{6}
+   \begin{enumerate}[label={\bf \alph*}]
+   \item
+   \begin{align*}
+    \bar{X}~N(\mu,\frac{\sigma^2}{n}) &\vee P(\bar{X}>1.305)\\
+                                      &\Rightarrow\\
+                              \sigma_X&=\frac{\sigma^2}{n}\\
+                                      &=\frac{.1}{200^.5}\\
+                                      &=.00707\\
+                                     Z&=\frac{X-\mu_x}{\sigma_X}\\
+                                      &=\frac{1.305-1.3}{.00707}\\
+                                      &=.707\\
+                      P(\bar{X}>1.305)&=  1-.7794\\
+                                      &= .2206
+   \end{align*}
+   \item
+   \begin{align*}
+         -.68&=\frac{X_{25}-\mu_x}{.00707}\\
+       X_{25}&= 1.29 \text{mm}
+   \end{align*}
+   \item
+   \begin{align*}
+      .05 &\Rightarrow Z=1.65\\
+      1.65&=\frac{1.305-1.3}{\frac{.1^2}{n}}\\
+          n &= 1083
+   \end{align*}
+   \end{enumerate}
+   \subsection*{10}
+      \begin{align*}
+          \mu&=np\\
+             &=100*.3\\
+             &=30\\
+       \sigma&=\sqrt{\mu(1-p)}\\
+             &=\sqrt{30*(1-.3)}\\
+             &=4.58\\
+      P(X>35)&=P(Z>\frac{35-30}{4.58})\\
+             &=P(Z>1.2)\\
+             &=1-.8849\\
+             &=.1151
+      \end{align*}
+\end{document}

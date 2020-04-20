@@ -1,0 +1,43 @@
+\documentclass[12pt]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel} 
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Eli Schmitter}
+\lhead{HW3}
+\rfoot{\thepage}
+
+\begin{document}
+\section*{2.2}
+
+
+
+\indent\textbf{2:}\\
+$$4*2*3=24$$\\
+\textbf{4:}\\
+\begin{align*}
+  2*\: _{18}C_{9} &= 2*\frac{18!}{9!*(18-9)!}\\
+  &=2*48620\\
+  &=97240
+\end{align*}\\
+\textbf{6:}\\
+\begin{align*}
+  _{10}P_{3}&=\frac{10!}{(10-3)!}\\
+  &=720
+\end{align*}\\
+\textbf{10:}
+\begin{align*}
+  _{18}C_{6}&=\frac{18!}{6!*(18-6)!}\\&=18564\\&\Rightarrow\\_{18564}C_{3}&=\frac{18564!}{3!*(18564-3)!}\\&= 1066088460164
+\end{align*}
+\textbf{12:}
+\begin{align*}
+  P(\text{mathcing socks})&= \frac{\text{number of mathching socks}}{\text{number of all pairs of socks}}\\
+  &=\frac{6}{_{12}C_{2}}\\
+  &=\frac{6}{\frac{12!}{2!*(12-2)!}}\\
+  &=\frac{6}{66}\\
+  &=\frac{1}{11}
+\end{align*}
+\end{document}

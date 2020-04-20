@@ -1,0 +1,4 @@
+\documentclass[paper=letter, fontsize=12pt]{scrartcl}
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages

@@ -1,0 +1,141 @@
+\documentclass[12pt]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage[english]{babel} 
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+\usepackage{fourier}
+\usepackage{mathtools}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Eli Schmitter}
+\lhead{HW5}
+\rfoot{\thepage}
+
+\begin{document}
+{\bf 2}\\
+
+\begin{enumerate}[label={\bf \alph*}]
+\item 
+\begin{align*}
+P(X\leq 2) &= P(X =0)+P(X=1) +P(X=2)\\
+&= .4 + .3 +.12\\
+&=.85
+\end{align*}
+\item 
+\begin{align*}
+P(X >1) &= P(X=2)+P(X=3) +P(X=4) + P(X=5)\\
+&= .15 + .1 +.05\\
+&=.3
+\end{align*}
+\item
+\begin{align*}
+\mu_X &= \sum_x xP(X = x)\\
+&= 0(P(X=0))+ 1(P(X=1))+ 2(P(X=2))+ 3(P(X=3))+ 4(P(X=4))\\
+&= 0(.4)+ 1(.3)+ 2(.15)+ 3(.1)+ 4(.05)\\
+&=1.1
+\end{align*}
+\item
+\begin{align*}
+\delta^2_X &= \sum_X(X^2)P(X=x) - \mu_X^2\\
+&=(0^2(P(X=0))+ 1^2(P(X=1))+ 2^2(P(X=2))+ 3^2(P(X=3))+ 4^2(P(X=4))-1.1^2\\
+&=(0^2(.4)+ 1^2(.3)+ 2^2(.15)+ 3^2(.1)+ 4^2(.05)-1.1^2\\
+&=1.39
+\end{align*}
+\end{enumerate}
+
+{\bf 4 a}\\
+
+\par probability mass function must sum up to 1 that is $\sum_X P(X=x) =1$\\
+\begin{align*}
+\sum_X P_1(X=x) &=.2+.2+.2+.3+.1+.1=.9\\
+\sum_X P_2(X=x) &=.1+.3+.3+.2+.2=1.1\\
+\sum_X P_3(X=x) &=.1+.2+.4+.2+.1=1\\
+\end{align*}
+\par There for $P_3$ could be a  possible  probability  mass  function  of X.
+
+{\bf 8}
+\begin{enumerate}[label={\bf \alph*}]
+\item 
+\begin{align*}
+F(x)&=P(X \leq x) \\
+P(X \leq 2) &= F(2)\\
+&=.83
+\end{align*}
+\item 
+\begin{align*}
+P(X > 3)&=1-P(X \leq 3)\\
+&= 1-F(3)\\
+&=.05
+\end{align*}
+\item 
+\begin{align*}
+P(X =1)&=F(1)-F(0)\\
+&= .72 -.41 \\
+&=.31\\
+\end{align*}
+\item
+\begin{align*}
+P(X =0)&=P( X \leq 0)\\
+&=F(0)\\
+&=.41
+\end{align*}
+\item
+\begin{align*}
+P(X =0)&=F(0) = .41\\
+P(X=1)&=F(1)-F(0)=.31\\
+P(X=2)&=F(2)-F(1)=.11\\
+P(X=3)&=F(3)-F(2)=.12\\
+P(X=4)&=F(4)-F(3)=.05\\
+\end{align*}
+
+\par $P(X=0)$ has the highest probability. 
+\end{enumerate}
+
+{\bf 24}%a-e
+\begin{enumerate}[label={\bf \alph*}]
+\item 
+\begin{align*}
+\int_{-\infty}^\infty f(t) \text{dt} &= 1 \\
+1&=0+\int_1^\infty \frac{C}{x^3} \text{dx}\\
+&=\frac{C}{2x^2} \bigg\rvert_1^{\infty}\\
+&=\frac{C}{2(\infty)^2}-\frac{C}{-2(1)^2}\\
+C&=2
+\end{align*}
+\item
+$$\mu_X= \int_{-\infty}^{\infty} x f(x)\text{dx}$$
+\begin{align*}
+\mu_X &= 0+\int_{1}^{\infty} x \frac{2}{x^3} \text{dx}\\
+      &= 2
+\end{align*}
+\item
+\begin{align*}
+F(x) &= \int_{-\infty}^x f(t) \text{dt}\\
+&=\int_{1}^x \frac{2}{t^3} \text{dt}\\
+&=1-\frac{1}{x^2}\text{ for} x\geq 1  
+\end{align*}
+for $x < 1, F(x) =0$
+$$ F(x) = 
+   \begin{cases*}
+      0 &x<0\\
+      1-\frac{1}{x^2} & x \geq 1
+   \end{cases*}
+   $$
+\item
+\begin{align*}
+.5 &= \int_{-\infty}^{x_m} f(X) \text{dx}\\
+   &=  \int_{-\infty}^{x_m} \frac{2}{x^3} \text{dx}\\
+   &= 1-\frac{1}{x_m^2}\\
+1.412&=x_m
+\end{align*}
+\item
+\begin{align*}
+\text{PM}_{10}=P(X \leq 10) &= F(10)\\
+&=1-\frac{1}{(10)^2}\\
+\text{PM}_{10}&=.99
+\end{align*}
+\end{enumerate}
+ 
+\end{document}
